@@ -1,0 +1,128 @@
+/* Project Item */
+.project-item {
+    display: block;
+    line-height: 1;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid var(--border, rgba(255, 255, 255, 0.1));
+    transition: opacity 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-item:first-child {
+    padding-top: 0;
+}
+
+.project-item:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* Mobile thumbnail */
+.project-mobile-image {
+    width: 100%;
+    object-fit: cover;
+    aspect-ratio: 3/2;
+    object-position: top;
+    margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .project-mobile-image {
+        display: none;
+    }
+}
+
+/* Project content layout */
+.project-content {
+    display: flex;
+    gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+    .project-content {
+        gap: 1.25rem;
+    }
+}
+
+/* Project index number */
+.project-index {
+    font-family: var(--font-geist-mono), monospace;
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+}
+
+/* Project info */
+.project-info {
+    flex: 1;
+}
+
+/* Project title with gradient animation */
+.project-title {
+    font-family: 'nNungo', system-ui, sans-serif;
+    font-size: clamp(2rem, 5vw, 3.75rem);
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    letter-spacing: -0.02em;
+    /* Explicitly transition background-position for gradient animation */
+    transition: background-position 0.7s ease;
+    background: linear-gradient(to right,
+            var(--primary, #00f050) 50%,
+            var(--foreground) 50%);
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.project-item:hover .project-title {
+    background-position: 0% 0;
+}
+
+/* External link icon */
+.project-link-icon {
+    color: var(--foreground);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-item:hover .project-link-icon {
+    opacity: 1;
+}
+
+/* Tech stack */
+.project-tech-stack {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    color: var(--muted-foreground);
+    font-size: 0.75rem;
+}
+
+.project-tech-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.project-tech-dot {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--background-light, rgba(255, 255, 255, 0.1));
+}
+
+/* Hover effect - fade other projects */
+@media (min-width: 768px) {
+    .projects-container:hover .project-item {
+        opacity: 0.3;
+    }
+
+    .projects-container:hover .project-item:hover {
+        opacity: 1;
+    }
+}

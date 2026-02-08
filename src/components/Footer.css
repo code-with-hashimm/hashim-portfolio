@@ -1,0 +1,114 @@
+/* Footer Section */
+.footer-section {
+    position: relative;
+    z-index: 10;
+    padding: 5rem 0 2rem;
+    text-align: center;
+}
+
+/* Contact CTA */
+.footer-cta {
+    margin-bottom: 2.5rem;
+}
+
+.footer-cta-text {
+    font-size: 1.125rem;
+    color: var(--muted-foreground);
+    margin-bottom: 1rem;
+}
+
+.footer-email {
+    font-family: 'nNungo', system-ui, sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    color: var(--foreground);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-email:hover {
+    color: var(--primary, #00f050);
+    transform: translateY(-2px);
+}
+
+.footer-email-icon {
+    flex-shrink: 0;
+}
+
+/* Social Links */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.footer-social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--background-light, rgba(255, 255, 255, 0.1));
+    color: var(--foreground);
+    transition: all 0.3s ease;
+}
+
+.footer-social-link:hover {
+    background: var(--primary, #00f050);
+    color: var(--background);
+    transform: translateY(-3px);
+}
+
+/* Divider */
+.footer-divider {
+    width: 100%;
+    max-width: 200px;
+    height: 1px;
+    background: var(--border, rgba(255, 255, 255, 0.1));
+    margin: 0 auto 1.5rem;
+}
+
+/* Bottom Section */
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-copyright {
+    font-size: 0.875rem;
+    color: var(--muted-foreground);
+}
+
+.footer-credits {
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+}
+
+.footer-credits-link {
+    color: var(--foreground);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-credits-link:hover {
+    color: var(--primary, #00f050);
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .footer-section {
+        padding: 6rem 0 2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+    }
+}

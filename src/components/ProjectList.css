@@ -1,0 +1,55 @@
+/* Projects Section */
+.projects-section {
+    position: relative;
+    z-index: 10;
+    padding: 5rem 0;
+}
+
+@media (min-width: 768px) {
+    .projects-section {
+        padding: 8rem 0;
+    }
+}
+
+/* Projects container */
+.projects-container {
+    position: relative;
+}
+
+/* Floating image that follows cursor on hover */
+.projects-float-image {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    pointer-events: none;
+    width: 200px;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    opacity: 0;
+}
+
+@media (min-width: 768px) {
+    .projects-float-image {
+        display: block;
+    }
+}
+
+@media (min-width: 1280px) {
+    .projects-float-image {
+        width: 350px;
+    }
+}
+
+/* Projects list */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 767px) {
+    .projects-list {
+        gap: 2.5rem;
+    }
+}
