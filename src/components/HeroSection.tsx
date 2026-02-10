@@ -1,10 +1,13 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import ArrowAnimation from "./ArrowAnimation";
 
 export function HeroSection() {
   return (
-    <div className="relative z-10 h-full w-full flex flex-col pt-20">
+    <div className="relative z-10 h-full w-full flex flex-col pt-20 overflow-hidden">
+      {/* Arrow Animation - positioned at bottom center */}
+      <ArrowAnimation />
 
       {/* Main Content */}
       <main className="flex-1 flex items-center container">
