@@ -6,6 +6,7 @@ import 'lenis/dist/lenis.css';
 import "./globals.css";
 
 import ScrollProgressIndicator from "@/components/ScrollProgressIndicator";
+import SmoothFollower from "@/components/SmoothFollower";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
             duration: 1.4,
           }}
         >
+          <SmoothFollower />
           <main>{children}</main>
           <ScrollProgressIndicator />
         </ReactLenis>
