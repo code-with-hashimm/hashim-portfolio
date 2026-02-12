@@ -9,12 +9,19 @@ export default function SmoothFollower() {
   const borderDotPosition = useRef({ x: 0, y: 0 })
 
   const [renderPos, setRenderPos] = useState({ dot: { x: 0, y: 0 }, border: { x: 0, y: 0 } })
+  const [mounted, setMounted] = useState(false)
   const [isHovering, setIsHovering] = useState(false)
 
   const DOT_SMOOTHNESS = 0.2
   const BORDER_DOT_SMOOTHNESS = 0.1
 
   useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!mounted) return
+
     const handleMouseMove = (e: MouseEvent) => {
       mousePosition.current = { x: e.clientX, y: e.clientY }
     }
@@ -65,9 +72,9 @@ export default function SmoothFollower() {
 
       cancelAnimationFrame(animationId)
     }
-  }, [])
+  }, [mounted])
 
-  if (typeof window === "undefined") return null
+  if (!mounted) return null
 
   return (
     <div className="pointer-events-none fixed inset-0 z-50">

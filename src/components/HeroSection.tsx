@@ -1,11 +1,39 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { motion } from "framer-motion";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
 import ArrowAnimation from "./ArrowAnimation";
 
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
 export function HeroSection() {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Slide up and fade content on scroll exit (reference Banner pattern)
+  useGSAP(
+    () => {
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "bottom 70%",
+          end: "bottom 10%",
+          scrub: 1,
+        },
+      });
+
+      tl.to(".slide-up-and-fade", {
+        y: -150,
+        opacity: 0,
+        stagger: 0.02,
+      });
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <div className="relative z-10 h-full w-full flex flex-col pt-20 overflow-hidden">
+    <div className="relative z-10 h-full w-full flex flex-col pt-20 overflow-hidden" ref={containerRef}>
       {/* Arrow Animation - positioned at bottom center */}
       <ArrowAnimation />
 
@@ -28,6 +56,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
+              className="slide-up-and-fade"
             >
               <h1 className="hero-title mb-4">
                 <span className="text-accent-green">Full Stack</span>
@@ -40,7 +69,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-              className="text-muted-foreground text-base md:text-lg max-w-md mb-8 leading-relaxed"
+              className="text-muted-foreground text-base md:text-lg max-w-md mb-8 leading-relaxed slide-up-and-fade"
             >
               Hi! I&apos;m <span className="text-foreground font-medium">Hashim</span>. A passionate Full Stack Developer focused on building responsive, scalable, and user-friendly web applications.
             </motion.p>
@@ -49,6 +78,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              className="slide-up-and-fade"
             >
               <button className="hire-btn group">
                 Let's connect

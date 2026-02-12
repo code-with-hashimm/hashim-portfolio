@@ -1,0 +1,135 @@
+/* Code About Section */
+.code-about-container {
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* Section label - "< About />" */
+.code-about-label {
+    font-family: var(--font-geist-mono), 'Courier New', monospace;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.code-tag {
+    color: var(--foreground);
+    font-weight: 500;
+}
+
+/* Code block container */
+.code-block {
+    font-family: var(--font-geist-mono), 'Courier New', monospace;
+    font-size: clamp(0.7rem, 1.2vw, 0.875rem);
+    line-height: 1.8;
+    overflow-x: auto;
+    padding: 1.5rem 0;
+    border-radius: 0.5rem;
+}
+
+/* Hide scrollbar but allow scroll */
+.code-block::-webkit-scrollbar {
+    display: none;
+}
+
+.code-block {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Individual code line */
+.code-line {
+    display: flex;
+    align-items: flex-start;
+    white-space: nowrap;
+    padding: 0 0.5rem;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.code-line:hover {
+    background-color: hsl(0 0% 87% / 0.04);
+}
+
+/* Line numbers */
+.code-line-number {
+    flex-shrink: 0;
+    width: 2.5rem;
+    text-align: right;
+    margin-right: 1.5rem;
+    color: hsl(0 0% 50%);
+    user-select: none;
+    font-size: 0.8em;
+}
+
+/* Line content */
+.code-line-content {
+    flex: 1;
+}
+
+/* Syntax highlighting colors */
+.code-keyword {
+    color: hsl(280 80% 70%);
+    font-style: italic;
+}
+
+.code-class {
+    color: hsl(50 100% 70%);
+    font-weight: 600;
+}
+
+.code-method {
+    color: hsl(60 90% 65%);
+    font-weight: 500;
+}
+
+.code-property {
+    color: hsl(190 90% 65%);
+}
+
+.code-string {
+    color: hsl(120 50% 60%);
+}
+
+.code-comment {
+    color: hsl(0 0% 45%);
+    font-style: italic;
+}
+
+.code-bracket {
+    color: var(--foreground);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .code-about-container {
+        padding: 1rem 0;
+    }
+
+    .code-block {
+        font-size: 0.65rem;
+        line-height: 1.7;
+        padding: 1rem 0;
+    }
+
+    .code-line-number {
+        width: 2rem;
+        margin-right: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .code-block {
+        font-size: 0.55rem;
+    }
+
+    .code-line-number {
+        width: 1.5rem;
+        margin-right: 0.75rem;
+    }
+}
