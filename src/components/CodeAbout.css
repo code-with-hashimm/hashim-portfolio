@@ -27,7 +27,7 @@
     font-family: var(--font-geist-mono), 'Courier New', monospace;
     font-size: clamp(0.7rem, 1.2vw, 0.875rem);
     line-height: 1.8;
-    overflow-x: auto;
+    overflow-x: hidden;
     padding: 1.5rem 0;
     border-radius: 0.5rem;
 }
@@ -47,6 +47,8 @@
     display: flex;
     align-items: flex-start;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     padding: 0 0.5rem;
     border-radius: 4px;
     transition: background-color 0.2s ease;
@@ -117,6 +119,11 @@
         padding: 1rem 0;
     }
 
+    .code-line {
+        white-space: normal;
+        word-break: break-word;
+    }
+
     .code-line-number {
         width: 2rem;
         margin-right: 1rem;
@@ -126,6 +133,11 @@
 @media (max-width: 480px) {
     .code-block {
         font-size: 0.55rem;
+    }
+
+    .code-line {
+        white-space: normal;
+        word-break: break-word;
     }
 
     .code-line-number {

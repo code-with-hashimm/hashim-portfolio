@@ -7,6 +7,7 @@ import "./globals.css";
 
 import ScrollProgressIndicator from "@/components/ScrollProgressIndicator";
 import SmoothFollower from "@/components/SmoothFollower";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,6 +43,7 @@ export default function RootLayout({
           <main>{children}</main>
           <ScrollProgressIndicator />
         </ReactLenis>
+        <Analytics />
       </body>
     </html>
   );
