@@ -59,7 +59,7 @@ export const PROJECTS: IProject[] = [
             </ul>
         `,
         techStack: ['Next.js', 'Node.js', 'MongoDB', 'Tailwind CSS', 'AI/ML'],
-        thumbnail: '/Project Image/campuskey.png',
+        thumbnail: '/Project Image/campuskey.jpeg',
         liveUrl: '#',
     },
 ];
