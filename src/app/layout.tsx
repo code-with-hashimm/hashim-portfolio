@@ -20,8 +20,23 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hashim | Full Stack Developer",
+  title: "Hashim Portfolio",
   description: "Personal portfolio of Hashim - Full Stack Developer",
+  keywords: [
+    "Hashim Pinjari",
+    "Full Stack Developer",
+    "React Developer",
+    "Next.js Developer",
+    "Web Developer Portfolio",
+    "Hashim portfolio",
+  ],
+  authors: [{ name: "Hashim Pinjari" }],
+  robots: "index, follow",
+  openGraph: {
+    title: "Hashim Portfolio",
+    description: "Personal portfolio of Hashim - Full Stack Developer",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
