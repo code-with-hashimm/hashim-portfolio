@@ -1,4 +1,4 @@
-import { BackgroundBeams } from "@/components/ui/background-beams";
+import { LightLines } from "@/components/ui/light-lines";
 import { HeroSection } from "@/components/HeroSection";
 import { AboutSection } from "@/components/AboutSection";
 import { TechStackSection } from "@/components/TechStackSection";
@@ -20,7 +20,15 @@ export default function Home() {
 
       {/* Fixed Background */}
       <div className="fixed inset-0 z-0">
-        <BackgroundBeams />
+        <LightLines
+          gradientFrom="hsl(0 0% 19%)"
+          gradientTo="hsl(0 0% 19%)"
+          lightColor="hsl(0 0% 87%)"
+          lineColor="#ffffff"
+          linesOpacity={0.06}
+          lightsOpacity={0.85}
+          speedMultiplier={0.6}
+        />
       </div>
 
       {/* Global Sticky Header */}
