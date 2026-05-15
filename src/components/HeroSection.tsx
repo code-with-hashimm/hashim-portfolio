@@ -80,7 +80,10 @@ export function HeroSection() {
               transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               className="slide-up-and-fade"
             >
-              <button className="hire-btn group">
+              <button 
+                className="hire-btn group"
+                onClick={() => window.open('https://tally.so/r/RGbd0K', '_blank')}
+              >
                 Let's connect
               </button>
             </motion.div>

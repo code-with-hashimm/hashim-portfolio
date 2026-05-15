@@ -1,6 +1,6 @@
 'use client';
 import { cn } from '@/lib/utils';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MoveUpRight } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { GENERAL_INFO, SOCIAL_LINKS } from '@/lib/data';
@@ -30,7 +30,15 @@ const MENU_LINKS = [
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(false);
     const router = useRouter();
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsVisible(true);
+        }, 2800);
+        return () => clearTimeout(timer);
+    }, []);
 
     const handleMenuToggle = () => {
         setIsMenuOpen((prev) => !prev);
@@ -44,7 +52,7 @@ const Navbar = () => {
     return (
         <>
             {/* Fixed Hamburger Button - stays in place during scroll */}
-            <div className="navbar-toggle-container">
+            <div className={cn("navbar-toggle-container transition-opacity duration-500", !isVisible && "opacity-0 pointer-events-none")}>
                 <button
                     type="button"
                     aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
